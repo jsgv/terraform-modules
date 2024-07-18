@@ -21,6 +21,7 @@ resource "aws_acm_certificate" "main" {
 }
 
 resource "aws_route53_record" "cert" {
+  depends_on      = [aws_acm_certificate.main]
   allow_overwrite = true
   name            = each.value.name
   records         = [each.value.record]
