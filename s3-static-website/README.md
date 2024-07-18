@@ -3,6 +3,8 @@
 Creates public (static website) hosted on an S3 bucket. A cloudfront distribution and an SSL
 certicate are also created and used to serve the bucket.
 
+I specifically use this for [Hugo](https://gohugo.io) generated static websites.
+
 `zone_id` is required since DNS records are used to validate the ACM certificate.
 
 ### Assumptions:

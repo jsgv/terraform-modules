@@ -47,4 +47,18 @@ resource "aws_cloudfront_distribution" "main" {
     acm_certificate_arn = aws_acm_certificate.main.arn
     ssl_support_method  = "sni-only"
   }
+
+  custom_error_response {
+    error_code            = 404
+    response_code         = 404
+    response_page_path    = "/404.html"
+    error_caching_min_ttl = 300
+  }
+
+  custom_error_response {
+    error_code            = 403
+    response_code         = 404
+    response_page_path    = "/404.html"
+    error_caching_min_ttl = 300
+  }
 }
